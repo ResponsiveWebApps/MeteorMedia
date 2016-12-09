@@ -1,0 +1,46 @@
+<template name="patternEdit">
+{{#if ownPost}}
+{{#with pattern}}
+
+	<form class="main edit-pattern-box">
+		<div class="control-group">
+
+			<h3>edit pattern</h3>
+
+			<label class="control-label" for="url">url link</label>
+			<div class="controls">
+				<input name="url" class="url" type="text" value="{{url}}" placeholder="url link"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="title">title</label>
+			<div class="controls">
+				<input name="title" class="title" type="text" value="{{title}}" placeholder="title of link"/>
+				</div>
+			</div>
+		<div class="control-group">
+			<label class="control-label" for="description">description</label>
+			<div class="controls">
+				<textarea name="description" class="description" type="text" value="{{description}}" placeholder="description." rows="6"></textarea>
+			</div>
+		</div>
+		<div class="control-group pull-right">
+			<div class="controls">
+				<input type="submit" value="submit" class="btn btn-primary submit"/>
+				<a href="{{pathFor 'patternPage'}}" class="btn cancel">cancel</a>
+			</div>
+		</div>
+		{{#if 1=0}}
+		<!-- Delete button for later.
+		<div class="control-group">
+			<div class="controls">
+				<a class="btn btn-danger delete" href="#">Delete post</a>
+			</div>
+		</div>
+		-->
+		{{/if}}
+	</form>
+
+{{/with}}
+{{/if}}
+</template>

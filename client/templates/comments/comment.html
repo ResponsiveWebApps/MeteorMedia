@@ -1,0 +1,7 @@
+<template name="comment">
+<li>
+		<span class="author"><a href="{{pathFor 'userProfile' username=author}}">{{author}}</a></span>
+		<span class="date">{{submittedText}}</span>
+	<p>{{{body}}}</p>
+</li>
+</template>

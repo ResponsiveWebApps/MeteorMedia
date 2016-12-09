@@ -1,0 +1,27 @@
+<template name="createPattern">
+	<div class="create-pattern-box hidden">
+					<div class="modal-header">
+						<a class="close" data-dismiss="modal">×</a>
+						<h3>create link</h3>
+					</div>
+					<div class="modal-body">
+						<label for="url">url link</label><br />
+						<input class="url input-xlarge" type="text" name="url" value="" id="url">
+						<br />
+						<label for="title">title</label><br />
+						<input class="title" type="text" name="title" value="" id="title">
+						<br />
+						<label for="description">description</label>
+						<br />
+						<textarea class="description input-xlarge" name="description" rows="6"></textarea>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-success save">create</a>
+						<a href="#" class="btn cancel" data-dismiss="modal">cancel</a>
+					</div>
+					<div class="row">
+						{{> errors}}
+					</div>
+
+	</div>
+</template>

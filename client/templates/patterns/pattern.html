@@ -1,0 +1,33 @@
+<template name="pattern">
+
+	<div class="col-md-4 pattern-box">
+
+	<div class="pattern-box-bar visible-xs"></div>
+
+		<div id="IframeWrapper">
+		<blockquote class="embedly-card" data-card-key="ae50a9bf1eed45f882c0962cb89330aa" data-card-controls="0"><h4><a href="{{url}}" target="_blank"></a></h4><p></p></blockquote>
+
+		<div id="iframeBlocker"  class="iframeBlocker pattern-closeMenu" style="position:absolute; top: 0; left: 0; width:100%; height:100%;background-color:aliceblue;opacity:0.1;">
+		</div>
+		</div>
+		<div class="pattern-box-header">
+			<a href="{{pathFor 'patternPage'}}">
+				<h4 class="truncate pattern-closeMenu">{{title}}</h4>
+			</a>
+			<p>
+				<a class="pattern-box-subheader truncate pattern-closeMenu" href="{{pathFor 'userProfile' username=creator}}">{{creator}} {{submittedText}}</a>
+			</p>
+		</div>
+
+		<div class="pattern-box-footer">
+			<a class="pull-left pattern-closeMenu" href="{{pathFor 'patternPage'}}">
+				<img class="pattern-box-footer-dots" src="/images/icons/small_3dots_grey.png">{{subpatternsCount}} links
+				<img class="pattern-box-footer-dots" src="/images/icons/small_3dots_grey.png">{{commentsCount}} comments
+			</a>
+			<span class="pull-left"><img class="pattern-box-footer-dots" src="/images/icons/small_3dots_grey.png">{{votes}}
+			</span> <span class="upvote {{upvotedClass}} pattern-closeMenu"></span>
+		</div>
+
+
+	 </div>
+</template>

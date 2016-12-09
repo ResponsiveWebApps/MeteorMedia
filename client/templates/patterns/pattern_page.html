@@ -1,0 +1,100 @@
+<template name="patternPage">
+
+<div class="container-fluid">
+
+  	<div class="col-md-8">
+
+	  	<div class="pattern-page-box">
+
+	  		<blockquote class="embedly-card" data-card-key="ae50a9bf1eed45f882c0962cb89330aa" data-card-controls="0">
+	  		<h4><a href="{{url}}" target="_blank">{{title}}</a></h4><p></p></blockquote>
+			<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+
+			<a href="{{pathFor 'patternPage'}}">
+				<h4 class="muted">{{title}}</h4>
+			</a>
+			<p><a href="{{pathFor 'userProfile' username=creator}}">{{creator}}</a> {{submittedText}}</p>
+			<p>{{{description}}}</p>
+
+			{{#if ownPost}}
+				<p><a href="{{pathFor 'patternEdit'}}"><i class="fa fa-pencil-square-o"></i>edit</a></p>
+			{{/if}}
+
+			<p>{{subpatternsCount}} links {{commentsCount}} comments</p>
+
+      <img class="pattern-box-footer-dots" src="/images/icons/small_3dots_grey.png">{{votes}}
+			<span class="upvote {{upvotedClass}} pattern-closeMenu"></span>
+
+      {{>whoStars}}
+
+      <br />
+      <br />
+			<a href="{{shareOnFacebookLink}}" target="_blank" class="btn btn-facebook">
+			  <i class="fa fa-facebook"></i>
+			</a>
+			<a href="{{shareOnTwitterLink}}" target="_blank" class="btn btn-twitter">
+			  <i class="fa fa-twitter"></i>
+			</a>
+			<a href="{{shareOnGooglePlusLink}}" target="_blank" class="btn btn-google-plus">
+			  <i class="fa fa-google-plus"></i>
+			</a>
+
+		</div>
+
+		<button data-toggle="collapse" data-target="#comments-list" class="btn">
+		show/hide comments <b class="caret"></b>
+		</button>
+
+		<div class="collapse in" id="comments-list">
+			    <ul class="comments">
+			    		{{#each comments}}
+							{{> comment}}
+						{{/each}}
+					</ul>
+		</div>
+
+		<div class="visible-xs" id="xs-check"></div>
+			<script>
+			if( $("#xs-check").is(":visible") )
+			    $("#comments-list").removeClass("in");
+			</script>
+
+			{{#if currentUser}}
+				{{> commentSubmit}}
+			{{else}}
+				<p>log in to comment.</p>
+			{{/if}}
+
+	    </div>
+
+	    <div class="col-md-4">
+	    	{{#if currentUser}}
+	    		{{>addSubpattern}}
+	    	{{/if}}
+	    	<h3>subpatterns</h3>
+        <div class="subpattern-box">
+          {{#each subpatterns}}
+
+            {{#if origin}}
+
+              {{>subpatternOrigin}}
+
+            {{else}}
+
+            {{>subpattern}}
+
+            {{/if}}
+
+          {{/each}}
+
+        </div>
+		</div>
+
+
+ </div>
+
+
+
+
+
+</template>

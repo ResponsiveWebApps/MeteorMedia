@@ -1,0 +1,76 @@
+<template name="nav">
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	<div class="container-fluid">
+	  <div class="navbar-header">
+
+
+			<div class="navbar-brand">
+		    <a href="/">Meteor Media</a>
+			</div>
+
+		<div class="loginmenu-nav">
+
+			<div class="pull-right">
+				<span class="openMenuBtn"><img src="/images/icons/profile_menu_icon_white.png"></span>
+			</div>
+
+			<div class="pull-right">
+				{{> loginButtons}}
+			</div>
+
+			<div class="pull-right hidden-xs">
+				<input type="text" id="navbar-srchbox" class="hidden w3-animate-right" placeholder=": search patterns ..." />
+				<a href="#" class="srch-button"><img src="/images/icons/icon_search_white.png"></a>
+			</div>
+
+		</div>
+
+	  </div>
+
+
+	  <div class="">
+
+	<!--temp nav delete if current setup works
+		<ul class="nav navbar-nav navbar-right hidden-xs">
+
+			<li><input type="text" id="navbar-srchbox" class="hidden w3-animate-right" placeholder=": search patterns ..." /></li>
+			<li><a href="#" class="srch-button"><img src="/images/icons/icon_search_white.png"></a></li>
+			<li>{{> loginButtons align="right"}}</li>
+			<li><span class="openMenuBtn"><img src="/images/icons/profile_menu_icon_white.png"></span></li>
+		</ul>
+-->
+
+		<!--side nav 	-->
+		<div id="Sidebarnav" class="sidenav">
+
+			<a href="javascript:void(0)" class="closeMenubtn"><img src="/images/icons/profile_menu_icon_white.png"></a>
+			<a href="javascript:void(0)" class="closebtn"><img src="/images/icons/header_x_selected.png"></a>
+
+			<ul class="sidebarnav-menu">
+				<li><img class="sidebarnav-menu-dots" src="/images/icons/decor_big_dots.png"></li>
+  			<li><a href="/" class="sidebarnav-menu-home">HOME</a></li>
+				{{#if currentUser}}
+	    	<li><a href="/prfl/{{currentUser.username}}" class="sidebarnav-menu-viewProfile">PROFILE</a></li>
+				<li><a class="addInterest" href="#">+CREATE LINK</a></li>
+				{{/if}}
+				<li><img class="sidebarnav-menu-dots" src="/images/icons/decor_big_dots.png"></li>
+			</ul>
+
+			<ul class="sidebarnav-menu visible-xs">
+				<li><input type="text" id="navbar-srchbox" class="" placeholder=": search patterns ..." />
+						<img class="srch-button-nav-xs" src="/images/icons/icon_search_white.png"></li>
+				<li></li>
+
+			</ul>
+
+		</div>
+
+	   </div>
+
+
+
+	</div>
+	</nav>
+
+
+</template>

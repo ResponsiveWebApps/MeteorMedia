@@ -1,0 +1,7 @@
+<template name="whoStars">
+<div class="whoStars-box hidden">
+{{#each upvoters}}
+  <a href="{{pathFor 'userProfile' username=this}}">{{this}}</a>
+{{/each}}
+</div>
+</template>

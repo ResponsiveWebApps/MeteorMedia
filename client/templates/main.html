@@ -1,0 +1,31 @@
+<template name="main">
+	<div class="container">
+	{{>createPattern}}
+	<div id="mainContent" class="container-fluid auto-clear">
+
+
+		{{#each patterns}}
+		{{>pattern}}
+		{{else}}
+		{{/each}}
+
+
+
+	</div>
+
+
+	<div class="clear"></div>
+	<div class="container-fluid clear">
+	{{#if nextPath}}
+      <a class="load-more" href="{{nextPath}}">MORE LINKS</a>
+
+	{{/if}}
+
+    </div>
+
+    </div>
+
+
+
+
+</template>

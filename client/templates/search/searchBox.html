@@ -1,0 +1,30 @@
+<template name="searchBox">
+  <input type="text" id="search-box" placeholder="search patterns" />
+</template>
+
+<template name="searchResult">
+
+<div class="container-fluid">
+
+  <div id='search-result'>
+    <div id="search-meta">
+      {{#if isLoading}}
+        searching for yourself?
+      {{/if}}
+    </div>
+
+    {{#each getPackages}}
+    <div class="package">
+      <h4>
+        <a href="{{pathFor 'patternPage'}}">{{{title}}}</a>
+      </h4>
+      <div class="description">
+        {{{description}}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+</div>
+
+</template>

@@ -1,0 +1,51 @@
+<template name="userProfile">
+<div class="container-fluid">
+
+  <h1>{{user.username}}</h1>
+  <p>
+    <i>joined: {{joinedAt}}</i>
+    <br />
+    <h4><img src="/images/icons/comment_full_star.png"><i>{{patternStarsCount}} stars</i></h4>
+    <br />
+ </p>
+
+  {{#if currentUser}}
+    {{#unless ownProfile}}
+
+      {{#if alreadyConnected}}
+        <a href="#" class="btn-sm btn-default disconnect">disconnect</a>
+      {{else}}
+        <a href="#" class="btn-sm btn-primary connect">connect</a>
+      {{/if}}
+
+    {{/unless}}
+  {{/if}}
+
+  <h4><i>({{connectionCount}})</i> connections</h4>
+
+  <div class="connections-box">
+
+      {{#each connections}}
+        <a href="{{pathFor 'userProfile' username=connectionTo}}">{{connectionTo}}</a>
+      {{/each}}
+  </div>
+
+  <h4><i>({{patternCount}})</i> patterns</h4>
+
+  <div id="mainContent" class="auto-clear">
+
+
+
+		{{#each patterns}}
+		{{>pattern}}
+		{{else}}
+		{{/each}}
+
+
+
+	</div>
+
+
+
+</div>
+</template>

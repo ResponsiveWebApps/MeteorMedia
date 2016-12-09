@@ -1,0 +1,26 @@
+<template name="layout">
+
+<div id="wrapper">
+
+  {{>nav}}
+
+<div class="container-fluid">
+
+	<div class="row">
+
+		{{> errors}}
+
+	</div>
+</div>
+
+{{>createPattern}}
+
+<div class="container-fluid clear">
+  {{> yield}}
+</div>
+
+</div><!-- end of wrapper -->
+
+{{>footer}}
+
+</template>
